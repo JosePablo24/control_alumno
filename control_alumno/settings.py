@@ -41,9 +41,9 @@ INSTALLED_APPS = [
     # Agregando aplicaciones independientes de Django    
     'rest_framework',
     'rest_framework.authtoken',
+    'corsheaders',        
     'Alumno',
-    'Carrera',
-    'AlumnoCarreras',
+    'Carrera',    
 ]
 
 MIDDLEWARE = [
@@ -53,10 +53,13 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',    
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 SITE_ID = 1
+CORS_ORIGIN_ALLOW_ALL = True
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
