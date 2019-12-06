@@ -9,7 +9,7 @@ class Alumno(models.Model):
     matricula = models.IntegerField(null=False)
     edad = models.IntegerField(null=False)
     direccion = models.CharField(max_length=100, null=False)     
-    idCarrera = models.ForeignKey(Carrera, on_delete=models.CASCADE)
+#    idCarrera = models.ForeignKey(Carrera, on_delete=models.CASCADE)
     delete = models.BooleanField(default=False)
     create = models.DateTimeField(default=timezone.now)
     
