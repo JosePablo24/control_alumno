@@ -25,7 +25,7 @@ SECRET_KEY = '^6jo@8g4gz^&9q%jy$^0=**17bfgs&db+703)1t7(tylq14$l1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -110,7 +110,7 @@ WSGI_APPLICATION = 'control_alumno.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
-        'default': {
+    'default': {
             'ENGINE': 'django.db.backends.mysql',
             'NAME': 'contro_pruebas',
             'USER': 'root',
@@ -120,6 +120,16 @@ DATABASES = {
         }
     }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'gestion',
+#         'USER': 'postgres',
+#         'PASSWORD': 'monopoli',
+#         'HOST': 'gestion.caj8ntppiucb.us-east-1.rds.amazonaws.com',
+#         'PORT': '5432',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -158,3 +168,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")

@@ -42,7 +42,7 @@ class AlumnoDetail(APIView):
         alumno = self.get_object(id)
         if alumno != 404:
             serializer = AlumnosSerializers(alumno, data=request.data)
-            if serializer.is_valid():
+            if serializer.is_valid():                
                 serializer.save()
                 datas = serializer.data
                 return Response(datas)
