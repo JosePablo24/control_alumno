@@ -1,6 +1,5 @@
 from django.db import models
 from django.utils import timezone
-from Carrera.models import Carrera
 
 class Alumno(models.Model):
     name = models.CharField(max_length=100, null=False)
@@ -8,8 +7,8 @@ class Alumno(models.Model):
     sexo = models.CharField(max_length=100, null=False)
     matricula = models.IntegerField(null=False)
     edad = models.IntegerField(null=False)
-    direccion = models.CharField(max_length=100, null=False)     
-    idCarrera = models.ForeignKey(Carrera, on_delete=models.CASCADE)
+    direccion = models.CharField(max_length=100, null=False)
+    carrera = models.CharField(max_length=100, null=False)
     delete = models.BooleanField(default=False)
     create = models.DateTimeField(default=timezone.now)
     
